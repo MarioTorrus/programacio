@@ -16,6 +16,7 @@ public class Primerexamen {
         System.out.println("Boolean matriu ordenada: " + matriuOrdenatAscendent(n));
         System.out.println("Boolean indexSenarOrdenatDescendent: " + indexSenarOrdenatDescendent(n));
         System.out.println("Array invertida: " + Arrays.toString(invertirArray(n)));
+        System.out.println("Ocurrencia: " + indexOcurrencia(n,12));
         System.out.println("Valor més proper a la mitja: " + mesProperMitja(n));
         System.out.println("Intercanvi de posició: " + Arrays.toString(intercanviValor(n, 5 )));
         System.out.println("Matriu intercanviada ordenada: " + Arrays.toString(matriuOrdenada(n)));
@@ -160,29 +161,30 @@ public class Primerexamen {
 
     // 9
 
-    public static int indexOcurrencia(int[] n) {
-        int result = 0;
-
+    public static int indexOcurrencia(int[] n, int ocurrencia) {
+        int result = -1;
+        for (int i = 0; i < n.length; i++) {
+            if (ocurrencia == n[i])
+                result = i;
+        }
         return result;
     }
 
     // 10
 
-    public static float mesProperMitja(int[] n) {
+    public static int mesProperMitja(int[] n) {
         float mitja = mitjaAritmetica(n);  // 20.9
-        float[] resta = new float[n.length];
-        float result = resta[0];
-
-        for (int i = 0; i < n.length; i++) {
-            resta[i] = n[i] - mitja;
-        }
-
-        for (int i = 1; i < resta.length; i++) {
-            if (resta[i] < result) {
-                result = resta[i];
+        int indexValorProperMitja = 0;
+        int valorProperMitja = 0;
+        for (int i = 1; i < n.length; i++) {
+            if (Math.abs(n[i] - mitja) < Math.abs(n[indexValorProperMitja] - mitja)) {
+                indexValorProperMitja = i;
+                valorProperMitja = n[i];
             }
         }
-        return result;
+
+
+        return valorProperMitja;
     }
 
     // 11
@@ -192,7 +194,7 @@ public class Primerexamen {
         int index = 0;  // index del valor més gran
         int temporal = n[a];  // valor posició a
 
-        for (int i = 0; i < a; i++) {
+        for (int i = a ; i > 0; i--) {  // (int i = 0; i < a; i++)
             if (temp < n[i]) {
                 temp = n[i];
                 index = i;
@@ -206,18 +208,10 @@ public class Primerexamen {
 
     // 12
     public static int[] matriuOrdenada(int[] n) {
-        int[] result = intercanviValor(n, 3);
-        int valorGran = n[0];
-        int temp = 0;
-        for (int i = 1; i < result.length; i++) {
-            if (valorGran > result[i]){
-                temp = result[i];
-                result[i] = valorGran;
-                valorGran = temp;
-            }
-
+        for (int i = n.length -1; i > 0; i--) {
+            n = intercanviValor(n,i);
         }
-        return result;
+        return n;
     }
 
 }
