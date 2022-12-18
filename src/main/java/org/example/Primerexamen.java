@@ -111,21 +111,12 @@ public class Primerexamen {
     // 6 true si matriu ordenat ascendent else false
     public static boolean matriuOrdenatAscendent(int[] n) {
         boolean result = true;
-       /*for (int i = 0; i < n.length; i++) {
-           for (int j = i + 1; j < n.length; j++) {
-               if (n[j] < n[i]){
-                   result = false;
-               }
-           }
-       }
-        */
         for (int i = 1; i < n.length; i++) {
-            if (i <= n.length) {
                 if (n[i] > n[i - 1]) {
 
                 } else
                     result = false;
-            }
+
         }
         return result;
     }
