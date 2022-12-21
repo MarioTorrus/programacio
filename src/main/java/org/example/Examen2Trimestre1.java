@@ -4,8 +4,21 @@ public class Examen2Trimestre1 {
     public static void main(String[] args) {
         //1
         System.out.println(esUnNombrePerfecte(6));
+        //2
+        int[][] A ={
+                {2, 1, 1},
+                {0, 1, 3},
+                {1, 0, 2}
+        };
+        int[][] B ={
+                {1, 1, 0},
+                {2, 1, 2},
+                {3, 0, 2}
+        };
+        imprimirBidimensional(multiplicarMatrius(A,B));
         //4
         System.out.println(esUnPanagrama("pack my box with five dozen liquor jugs"));
+
     }
 
     //1
@@ -17,10 +30,7 @@ public class Examen2Trimestre1 {
                 result += i;
             }
         }
-        if (result == num) {
-            return true;
-        }
-        return false;
+        return result == num;
     }
 
     // 2
@@ -47,6 +57,15 @@ public class Examen2Trimestre1 {
             return null;
         }
         return resultat;
+    }
+
+    public static void imprimirBidimensional (int[][] M) {
+        for (int i = 0; i < M.length; i++) {
+            System.out.println(" ");
+            for (int j = 0; j < M[0].length; j++) {
+                System.out.println(M[i][j] + " ");
+            }
+        }
     }
 
     // 3
@@ -120,10 +139,7 @@ public class Examen2Trimestre1 {
                 index++;
             }
         }
-        if (counter == 26) {
-            return true;
-        }
-        return false;
+        return counter == 26;
     }
 
 }
