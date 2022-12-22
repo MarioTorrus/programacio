@@ -1,10 +1,8 @@
 package org.example;
 
-import java.sql.Array;
-import java.sql.PreparedStatement;
 import java.util.Arrays;
 
-public class Primerexamen {
+public class ExamenIntsArrays {
     public static void main(String[] args) {
         int[] n = {2, 43, 1, 12, 6, 4, 8, 54, 76, 3};  // 10 pos (0-9)
         System.out.println("Suma matriu: " + sumaMatriu(n));

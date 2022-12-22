@@ -1,9 +1,9 @@
 package org.example;
 
-public class examen {
+public class Exm1Tr1 {
     public static void main(String[] args) {
         int[] M = {3, 4, 5, 6, 23, 3, 14, 32, 52, 1};
-        String text = "hola buenas tardes mañana hay examen de programacion";
+        String text = "hola buenas tardes mañana hay Exm1Tr1 de programacion";
         System.out.println(textConteStringALaPosicio(text, "buenas", 5));
     }
 

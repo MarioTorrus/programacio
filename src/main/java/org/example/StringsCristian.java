@@ -1,6 +1,6 @@
 package org.example;
 
-public class AnalisiText {
+public class StringsCristian {
     public static void main(String[] args) {
         String frase = "Las palomas ojo, los pavos las gallinas, aa comen, cacac, cacarean, ponen huevos? y cagan.";
         String[] matrizString = {"mundiales","hola","que","papapaxtin","tal","caracol","ok","mundo","y"};

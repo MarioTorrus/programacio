@@ -1,6 +1,6 @@
 package org.example;
 
-public class Examen2Trimestre1 {
+public class Exm2Tr1 {
     public static void main(String[] args) {
         //1
         System.out.println(esUnNombrePerfecte(6));

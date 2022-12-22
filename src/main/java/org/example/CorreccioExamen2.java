@@ -80,13 +80,14 @@ public class CorreccioExamen2 {
         return 0;
     }
     
-    public static int conversioANombreDecimal (String nombreRoma) {
+    /*public static int conversioANombreDecimal (String nombreRoma) {
         int numDecimal = 0;
 
         for (int k = 0; k < ; k++) {
             
         }
     }
+     */
     
     // 4
     public static boolean esUnPanagrama (String mot) {
