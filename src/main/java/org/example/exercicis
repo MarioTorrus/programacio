@@ -1,0 +1,96 @@
+package org.example;
+
+import java.sql.SQLOutput;
+
+public class Problemes10_1 {
+    public static void main(String[] args) {
+        char[] alfabeto = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+        String texto = "Para aprobar programacion hay que programar mucho";
+
+        //1
+        numMayorImprimir2(3, 5);
+        //2
+        System.out.println(numIgualesPrecision(3.3f, 3.1f, 0.1f));
+        // 5
+        mediaYMax(new float[]{2, 4, 6});
+
+        // Cifrado Cesar
+        cifradoCesar(alfabeto, texto, 2);
+    }
+
+    // 1
+    public static void numMayorImprimir(int a, int b) {
+        if (a == b)
+            System.out.println("Los numeros son iguales");
+        else if (a > b) {
+            System.out.println(a);
+        } else System.out.println(b);
+    }
+
+    public static void numMayorImprimir2(int a, int b) {
+        if (a == b)
+            System.out.println("Los números son iguales");
+        else {
+            int numMayor = (a > b) ? a : b;
+            System.out.println(numMayor);
+        }
+
+
+    }
+
+    // 2
+    public static boolean numIgualesPrecision(float a, float b, float p) {
+        return (Math.abs(a - b) < p);
+    }
+
+    // 3
+    public static float calcularMedia(float[] M) {
+        float resultado = 0;
+        for (int i = 0; i < M.length; i++) {
+            resultado += M[i];
+        }
+        return resultado / M.length;
+    }
+
+    public static float notaMax(float[] M) {
+        float resultado = M[0];
+        for (int i = 1; i < M.length; i++) {
+            if (M[i] > resultado)
+                resultado = M[i];
+        }
+        return resultado;
+    }
+
+    public static void mediaYMax(float[] M) {
+        System.out.println(calcularMedia(M));
+        System.out.println(notaMax(M));
+    }
+
+
+    // abcdefg.....xyz
+    // b + 5 ==> "g"
+    // x  + 5 ==> 24+5 --> 7 % 26
+    // cifrado cesar
+    public static void cifradoCesar(char[] alfabeto, String texto, int pos) {
+        String textoLower = texto.toLowerCase();
+        char[] charsText = new char[textoLower.length()];
+        for (int i = 0; i < textoLower.length(); i++) {
+            charsText[i] = textoLower.charAt(i);
+        }
+        for (int i = 0; i < charsText.length; i++) {
+            if (charsText[i] != ' ') {
+                for (int j = 0; j < alfabeto.length; j++) {
+                    if (charsText[i] == alfabeto[j]) {
+                        charsText[i] = alfabeto[j + pos];
+                        break;
+                    }
+                }
+            }
+        }
+
+        String resultado = charsText.toString();
+        System.out.println(resultado);
+
+
+    }
+}
